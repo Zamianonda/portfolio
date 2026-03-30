@@ -1,0 +1,247 @@
+/* 공통 */
+.container {
+    width: 1558px;
+    margin: 0 auto;
+}
+.container2 {
+    width: 1294px;
+    margin: 0 auto;
+}
+main {
+    max-width: 1271px;
+    margin: 0 auto;
+}
+/* 헤더영역 */
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #E30520;
+    
+    color: white;
+}
+header .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 80px;
+    font-size: 24px;
+}
+header .header-top h1 {
+    position: absolute;
+    top: 18px;
+    margin-left: 187px;
+}
+header .header-top .top-left {
+    margin-left: 400px;
+    font-size: 20px;
+}
+header .header-top .top-left a::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    left: 384px;
+}
+header .header-top .top-right {
+    margin-right: 187px;
+    display: flex;
+}
+header .header-top .top-left ul,
+header .header-top .top-right ul {
+    display: flex;
+    gap: 100px;
+}
+
+/* 서브페이지 부헤더 영역 */
+nav .nav-top, .nav-top ul {
+    background-color: #F0F2F3;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    line-height: 80px;
+    font-size: 25px;
+}
+.nav-top a .fa-solid {
+    margin-left: 217px;
+    margin-right: 61px;
+}
+.nav-top ul .nav1 {
+    margin-right: 178px;
+    
+}
+.nav-top ul .nav3 {
+    margin-left: 60px;
+}
+.nav-top ul a::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 1px;
+    height: 80px;
+    left: 287px;
+    background-color: #434256;
+    margin-left: -106px;
+    opacity: 0.1;
+}
+.nav-top ul .nav3::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 1px;
+    height: 80px;
+    left: 287px;
+    background-color: #434256;
+    margin-left: 613px;
+    opacity: 0.3;
+}
+
+.nav-top ul .nav2::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 1px;
+    height: 80px;
+    left: 287px;
+    background-color: #434256;
+    margin-left: 264px;
+    opacity: 0.3;
+}
+.nav-top ul .nav1::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 1px;
+    height: 80px;
+    left: 287px;
+    background-color: #434256;
+    opacity: 0.3;
+}
+
+/* 비디오게임 영역 */
+
+
+.product-section {
+  max-width: 1271px;
+  margin: 0 auto;
+  margin-top: 130px;
+}
+
+/* 카테고리 */
+.category {
+  margin-bottom: 120px;
+  text-align: center;
+}
+
+.category h2 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* 제품 그리드 */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 186px;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+.product-item img {
+  width: 300px;
+  height: 350px;
+  object-fit: contain;
+  margin-bottom: 35px;
+}
+
+/* 설명 텍스트 */
+.desc {
+  max-width: 1271px;
+  margin: 0 auto;
+  font-size: 26px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .category {
+    margin-bottom: 80px;
+  }
+}
+/* 선 */
+.divider {
+    width: 1271px;
+    height: 1px;
+    background-color: #434256;
+    position: relative;
+    margin-bottom: 120px;
+    opacity: 0.3;
+}
+
+
+
+/* 푸터 영역 */
+.foot {
+    margin-top: 68px;
+    width: 100%;
+    height: 400px;
+    background-color: #434256;
+}
+.foot-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    color: white;
+    
+}
+.foot2 {
+    margin-left: 277px;
+    margin-right: 276px;
+}
+.foot3 {
+    margin-right: 277px;
+}
+.foot-menu ul {
+    opacity: 60%;
+}
+.foot-menu li {
+    margin-bottom: 11px;
+    
+    font-size: 17px;
+    font-weight: 400;
+}
+h5 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: 'Pretendard';
+    font-weight: 400;
+    
+}
+.footer-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #FFFFFF;
+    margin-top: 30px;
+    margin-bottom: 63px;
+}
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 400;
+    color: #d6d6dc;
+    margin-bottom: 67px;
+}
+.footer-links a{
+    margin-left: 50px;
+}
