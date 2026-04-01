@@ -7391,6 +7391,8 @@ textarea.form-control-lg {
 
 .bg-primary {
   background-color: #1abc9c !important;
+  background: url(../img/portfolio/어두운_배경과_느낌을_202604011611.png);
+  background-size: cover;
 }
 
 .bg-secondary {
@@ -10928,11 +10930,11 @@ html {
   font-size: 80%;
   padding: 0.8rem;
 }
-
+/* 헤더 내브 수정 */
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    /* padding-top: 1.5rem;
+    padding-bottom: 1.5rem; */
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }
   #mainNav .navbar-brand {
