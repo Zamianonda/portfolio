@@ -34,7 +34,10 @@ body {
 
 /* 포폴섹션 글씨 색상 */
 .text-secondary {
-  color: #fff !important;
+  color: #fff;
+}
+.popol-color h2{
+    color: #000;
 }
 
 .page-section-heading text-center text-uppercase text-secondary mb-0 {
