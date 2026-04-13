@@ -9,6 +9,14 @@
     border-radius: 5px;
 }
 
+/* 상세페이지 링크 버튼 간격 */
+.link-group {
+    display: flex;
+    gap: 50px; /* 버튼 사이 간격 */
+    justify-content: center; /* 가운데 정렬 (선택) */
+    margin-top: 50px;
+}
+
 .back {
     background: url(../img/portfolio/어두운_배경과_느낌을_202604011611.png);
     background-size: cover; /* 이미지 크기 조절 */
