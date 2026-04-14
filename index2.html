@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamy Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* --- Global & Typography --- */
+:root {
+    --sky-blue: #a3c4f3;
+    --light-green: #d1e8e2;
+    --soft-white: #fdfdfd;
+    --text-color: #4a5d82;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--sky-blue) 0%, var(--light-green) 100%);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    animation: floatVertical 6s ease-in-out infinite;
+}
+
+.cloud-text {
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    color: var(--soft-white);
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cta-btn:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Pure CSS Clouds --- */
+.clouds-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cloud {
+    background: var(--soft-white);
+    position: absolute;
+    border-radius: 50px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.03);
+    opacity: 0.8;
+}
+
+/* Cloud puffs using pseudo-elements */
+.cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: var(--soft-white);
+    border-radius: 50%;
+}
+
+.cloud-1 {
+    width: 200px; height: 60px;
+    top: 20%; left: -20%;
+    animation: drift 25s linear infinite;
+}
+.cloud-1::before { width: 100px; height: 100px; top: -50px; left: 20px; }
+.cloud-1::after { width: 70px; height: 70px; top: -30px; right: 30px; }
+
+.cloud-2 {
+    width: 250px; height: 70px;
+    top: 50%; left: -30%;
+    animation: drift 35s linear infinite 5s; /* Delay for variation */
+}
+.cloud-2::before { width: 120px; height: 120px; top: -60px; left: 30px; }
+.cloud-2::after { width: 90px; height: 90px; top: -40px; right: 40px; }
+
+.cloud-3 {
+    width: 150px; height: 50px;
+    top: 75%; left: -15%;
+    animation: drift 20s linear infinite 2s;
+    opacity: 0.6;
+}
+.cloud-3::before { width: 80px; height: 80px; top: -40px; left: 15px; }
+.cloud-3::after { width: 50px; height: 50px; top: -20px; right: 20px; }
+
+/* --- Portfolio Section (Glassmorphism) --- */
+.portfolio {
+    padding: 6rem 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio h2 {
+    text-align: center;
+    color: var(--soft-white);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Glassmorphism Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-15px) scale(1.02) !important; /* Overrides floating animation momentarily */
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    height: 200px;
+    width: 100%;
+    /* In a real scenario, use background-image: url('...'); */
+    opacity: 0.8;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+/* --- Animations --- */
+@keyframes drift {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(120vw); }
+}
+
+@keyframes floatVertical {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Different speeds for cards to create organic depth */
+.floating-slow { animation: floatVertical 7s ease-in-out infinite; }
+.floating-medium { animation: floatVertical 5s ease-in-out infinite 1s; }
+.floating-fast { animation: floatVertical 6s ease-in-out infinite 2s; }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .cloud-text { font-size: 3.5rem; }
+    .project-grid { grid-template-columns: 1fr; }
+}
+</style>
+<body>
+
+    <header class="hero" id="home">
+        <div class="clouds-container">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="cloud-text">PORTFOLIO</h1>
+            <p class="subtitle">Designing soft, surreal, and beautiful digital experiences.</p>
+            <a href="#projects" class="cta-btn">View Projects</a>
+        </div>
+    </header>
+
+    <section class="portfolio" id="projects">
+        <div class="container">
+            <h2>Recent Work</h2>
+            <div class="project-grid">
+                
+                <div class="project-card floating-slow">
+                    <div class="card-image" style="background-color: #bfe6ff;"></div>
+                    <div class="card-content">
+                        <h3>Project One</h3>
+                        <p>A soft, airy mobile application design focusing on mental wellness.</p>
+                    </div>
+                </div>
+
+                <div class="project-card floating-medium">
+                    <div class="card-image" style="background-color: #d1e8e2;"></div>
+                    <div class="card-content">
+                        <h3>Project Two</h3>
+                        <p>E-commerce platform with organic, fluid user interfaces.</p>
+                    </div>
+                </div>
+
+                <div class="project-card floating-fast">
+                    <div class="card-image" style="background-color: #ffd6e0;"></div>
+                    <div class="card-content">
+                        <h3>Project Three</h3>
+                        <p>Brand identity utilizing pastel color palettes and minimal typography.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
