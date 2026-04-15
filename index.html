@@ -29,16 +29,18 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#page-top">Home</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact-custom">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
-        <video></video>
-        <header class="masthead bg-primary text-white text-center back">
+        <header class="masthead bg-primary text-white text-center back video-header">
+            <video autoplay muted playsinline class="bg-video">
+                <source src="./assets/img/포폴메인영상1차.mp4" type="video/mp4">
+            </video>
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
                 <!-- <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." /> -->
@@ -53,6 +55,10 @@
                 <!-- Masthead Subheading-->
                 <!-- <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p> -->
             </div>
+            <!-- Scroll Down Button -->
+            <a href="#portfolio" class="scroll-down">
+                <span></span>
+            </a>
         </header>
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio">
@@ -93,7 +99,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"></div>
                             </div>
-                            <img class="img-fluid" src="./assets/img/동네서점/동네서점.jpg" alt="..." />
+                            <img class="img-fluid" src="./assets/img/동네서점/동네서점_썸네일.jpg" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 4 썸네일 & 호버시 썸네일 - 배스킨-->
@@ -165,7 +171,7 @@
                     <p class="contact-label">SEE YOU AGAIN :)</p>
 
                     <h2 class="contact-title">
-                        유연하게 생각하고,<br>
+                        끊임없이 탐구하고,<br>
                         더 나은 방향으로<br>
                         자연스럽게 흐르는 디자인을 만듭니다.
                     </h2>
@@ -507,5 +513,14 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="./assets/js/scripts.js"></script>
+
+
+        <script>
+        const video = document.getElementById("introVideo");
+
+        video.addEventListener("ended", function () {
+            video.classList.add("hide");
+        });
+        </script>
     </body>
 </html>

@@ -9,6 +9,55 @@
     border-radius: 5px;
 }
 
+
+
+/* 스크롤 버튼 위치 */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-decoration: none;
+    z-index: 10;
+}
+
+/* 내부 점 애니메이션 */
+.scroll-down span {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    margin-top: 8px;
+    animation: scrollMove 1.5s infinite;
+}
+
+/* 애니메이션 */
+@keyframes scrollMove {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(12px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+
+
+
+
 /* 상세페이지 링크 버튼 간격 */
 .link-group {
     display: flex;
@@ -16,16 +65,39 @@
     justify-content: center; /* 가운데 정렬 (선택) */
     margin-top: 50px;
 }
+/* 메인 영상 관련 코딩 */
+.video-header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
-.back {
+  /* 👇 여기만 조정 */
+  object-position: center 30%;
+}
+.bg-video.hide {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+/* .back {
     background: url(../img/portfolio/어두운_배경과_느낌을_202604011611.png);
     background-size: cover; /* 이미지 크기 조절 */
-    background-position: center; /* 중앙 정렬 */
-    background-repeat: no-repeat;
+    /* background-position: center; /* 중앙 정렬 */ 
+    /* background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
     margin-top: -150px;
-}
+} */
 
 /* 포폴 섹션 배경 색상 */
 body {
