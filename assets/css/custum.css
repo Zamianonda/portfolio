@@ -283,3 +283,22 @@ body {
 .text-copy {
   text-align:start !important;
 }
+
+/* about 섹션 */
+.about-section {
+    padding: 100px 0;
+    background: #212529; /* 기존 톤 유지 */
+    text-align: center;
+}
+
+.about-img-wrap {
+    max-width: 1000px; /* 이미지 최대 크기 */
+    margin: 0 auto;
+}
+
+.about-img-wrap img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
